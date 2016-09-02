@@ -1,0 +1,22 @@
+﻿<Window x:Class="Publisher.Views.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Publisher.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="700"
+             xmlns:cal="http://www.caliburnproject.org"
+        Title="Main Window">
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        
+        <TextBox x:Name="txtPublishContent"   Text="{Binding PublishContent, Mode=TwoWay}" VerticalAlignment="Top" Width="200" Height="30"/>
+
+        <Button x:Name="btnPublish" Content="Publish Event"  VerticalAlignment="Top" Width="100" Height="30" 
+                cal:Message.Attach="[Event Click] = [Action PublishEvent()]"/>
+
+        <Button x:Name="btnSubcribe" Content="Create Subcriber"  VerticalAlignment="Top" Width="100" Height="30" 
+                cal:Message.Attach="[Event Click] = [Action SubscribeEvent()]"/>
+
+    </StackPanel>
+</Window>
